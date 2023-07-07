@@ -1,5 +1,6 @@
 ## Los importantes metodos de String
 y = " This is lazy\t\n "
+
 print(y.strip())
 # Remueve espacios en blanco: 'This is lazy'
 
@@ -25,9 +26,14 @@ print("cheat".replace("ch", "m"))
 
 
 print(','.join(["F", "B", "I"]))
-# Glues together all elements in the list using the separator string: F,B,I
+# Une todos los elementos F B I  agregando una coma por elemento: F,B,I
 
 print(len("Rumpelstiltskin"))
-# String length: 15
+# Cuenta la cantidad de letras: 15
+
 print("ear" in "earth")
-# Contains: True
+# Verifica si el string ear esta dentro de earth: True
+
+
+print("senati".capitalize())
+# Convierte la primera letra en Mayuscula: Senati
