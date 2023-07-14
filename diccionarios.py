@@ -1,33 +1,33 @@
-# producto = {
-#     "nombre": "", 
-#     "marca": "",
-#     "costo": 0,
-#     "cantidad": 0,
-# }
+producto = {
+    "nombre": "", 
+    "marca": "",
+    "costo": 0,
+    "cantidad": 0,
+}
 
-# lista_productos = []
+lista_productos = []
 
-# flag=True
-# while flag:
-#     try: 
-#         nombreproducto = input("Nombre del producto: ")
-#         marcaproducto = input("Marca del producto: ")
-#         costoproducto = int(input("Costo del producto: "))
-#         cantidadproducto = int(input("Cantidad del producto: "))
-#     except ValueError:
-#         print("ALGO SALIO MAL INTENTALO OTRA VEZ")
-#     else:
-#         producto["nombre"]= nombreproducto
-#         producto["marca"]= marcaproducto
-#         producto["costo"]= costoproducto
-#         producto["cantidad"]= cantidadproducto
-#         lista_productos.append(producto)
-#         producto = {}
-#         pregunta = input("Desea agrear mas Productos? SI/NO")
-#         if str(pregunta) != "SI":
-#             flag = False
+flag=True
+while flag:
+    try: 
+        nombreproducto = input("Nombre del producto: ")
+        marcaproducto = input("Marca del producto: ")
+        costoproducto = int(input("Costo del producto: "))
+        cantidadproducto = int(input("Cantidad del producto: "))
+    except ValueError:
+        print("ALGO SALIO MAL INTENTALO OTRA VEZ")
+    else:
+        producto["nombre"]= nombreproducto
+        producto["marca"]= marcaproducto
+        producto["costo"]= costoproducto
+        producto["cantidad"]= cantidadproducto
+        lista_productos.append(producto)
+        producto = {}
+        pregunta = input("Desea agrear mas Productos? SI/NO")
+        if str(pregunta) != "SI":
+            flag = False
 
-#         print(lista_productos)
+        print(lista_productos)
 
 #menu
 print("""
