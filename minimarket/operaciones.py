@@ -19,6 +19,7 @@ def menu():
         else:
             if opcion == 1:
                 print("Listando productos")
+                print(lista_de_productos)
                 listarproductos(lista_de_productos)
             elif opcion == 2:
                 print("Agregando productos")
