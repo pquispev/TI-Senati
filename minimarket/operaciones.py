@@ -1,13 +1,17 @@
-from productos import crearproductos, listarproductos
+from productos import crearproductos, listarproductos, ventaproductos
 
 def menu():
-    lista_de_productos = []
+    lista_de_productos = [
+        {'nombre': 'MOUSE', 'marca': 'ASUS', 'costo': 12, 'cantidad': 12},
+        {'nombre': 'LAPTOP', 'marca': 'ASUS', 'costo': 1200, 'cantidad': 12}
+    ]
     omenu = """
     MINIMARKET
     ___________________
     1.Listar productos
     2.Agregar productos
-    3.Salir
+    3.Venta
+    4.Salir
     """
     flag = True
     while flag:
@@ -25,6 +29,9 @@ def menu():
                 print("Agregando productos")
                 crearproductos(lista_de_productos)
             elif opcion == 3:
+                print("Iniciando Venta")
+                ventaproductos(lista_de_productos)
+            elif opcion == 4:
                 print("Saliendo")
                 flag = False
 menu()
