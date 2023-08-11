@@ -1,4 +1,5 @@
 from producto import Producto
+from cliente import Cliente
 from utilitarios import input_int
 
 menu = """ CAFETIN SENATI 
@@ -18,7 +19,8 @@ jq = Producto("JUGO DE QUINUA", 2, 50)
 
 lista_productos = []
 lista_almuerzos = []
-
+# mi funcion crear_productos recibe como parametro
+#  una lista de productos 
 def crear_producto(list_product):
     nombre_p = input("Nombre del producto: ")
     precio_p = input_int("Precio del producto: ", "no ingresaste bien el precio")
@@ -47,17 +49,24 @@ def listar_productos(list_product):
 def vender_producto(product_selected, cantidad):
     product_selected.actualizar_stock(cantidad)
 
-def ticket_venta(nombre_p, cantidad_p, sub_total):
+def ticket_venta(nombre_p, cantidad_p, sub_total,  client):
     t = f"""
     CAFETIN SENATI
     TICKET DE VENTA
+    Cliente: { client }
     PRODUCTO     |  CANT. |  SUB.TOTAL
 1. { nombre_p }   {cantidad_p}  {sub_total}
     
     """
     return t
 
+def crear_cliente(list_client):
+    nombre_c = input("Nombre del cliente: ")
+    dni_c = input("DNI del cliente: ")
+    cliente_c = Cliente(nombre_c, dni_c)
+    list_client.append(cliente_c)
 
+lista_clientes = []
 print(menu)
 opcion = input_int("Elija un opcion: ", "No existe esta opcion")
 if opcion == 1:
@@ -67,7 +76,8 @@ if opcion == 1:
     pregunta = input_int("cual es la cantidad que desea: ", "No existe esta opcion")
     vender_producto(producto_seleccionado, pregunta)
     subtotal = producto_seleccionado.get_precio() * pregunta
-    print(ticket_venta(producto_seleccionado.get_nombre(), pregunta, subtotal))
+    cliente = input("Digite el nombre del cliente: ")
+    print(ticket_venta(producto_seleccionado.get_nombre(), pregunta, subtotal, cliente))
     
 elif opcion == 2:
     listar_productos(lista_almuerzos)

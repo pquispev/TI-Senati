@@ -1,3 +1,4 @@
+# 
 def input_int(mensaje, mensaje_error):
     while True:
         try:
